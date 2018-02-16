@@ -8,9 +8,11 @@ application = Flask(__name__)
 def hello():
     
     file = open('/mnt/hello-world-storage/logfile','w')
-    file.write("access from: "+socket.gethostname()+" at: "+time.ctime()+"\n") 
+    file.write("access from: "+socket.gethostname()+" at: "+time.ctime()+"\n")
     
-    return "Hello World! Greetings from "+socket.gethostname()+"\n"
+    return "Hello World! Greetings from "+socket.gethostname()+"\n"+file.readlines()+"\n"
 
+    file.close()
+    
 if __name__ == "__main__":
     application.run()
