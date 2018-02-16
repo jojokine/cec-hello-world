@@ -10,7 +10,8 @@ def hello():
     file = open('/mnt/hello-world-storage/logfile','r+')
     file.write("access from: "+socket.gethostname()+" at: "+time.ctime())
     
-    return "Hello World! Greetings from "+socket.gethostname()+" \n"+str(file.readlines())+" \n"
+    return "Hello World! Greetings from "+socket.gethostname()+"\n"
+    return str(file.readlines())+"\n"
 
     file.close()
     
